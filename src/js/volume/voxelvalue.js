@@ -10,7 +10,10 @@ papaya.volume = papaya.volume || {};
 
 
 /*** Constructor ***/
-papaya.volume.VoxelValue = papaya.volume.VoxelValue || function (imageData, imageType, imageDimensions, imageRange,
+papaya.volume.VoxelValue = papaya.volume.VoxelValue || function (imageData,
+                                                                 imageType,
+                                                                 imageDimensions,
+                                                                 imageRange,
                                                                  orientation) {
     this.imageData = imageData;
     this.imageType = imageType;

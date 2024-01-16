@@ -36,7 +36,7 @@ papaya.volume.Volume = papaya.volume.Volume || function (progressMeter, dialogHa
 
 /*** Static Pseudo-constants ***/
 
-papaya.volume.Volume.PROGRESS_LABEL_LOADING = "Loading";
+papaya.volume.Volume.PROGRESS_LABEL_LOADING = "Loading the image";
 
 
 /*** Prototype Methods ***/
@@ -192,8 +192,7 @@ papaya.volume.Volume.prototype.loadURL = function (url, vol, index) {
         })
         .progress(function (loaded,total) {
             progPerc = parseInt(100 * (vol.loadedFileCount) / vol.urls.length, 10);
-            progressText = papaya.volume.Volume.PROGRESS_LABEL_LOADING +
-                ' image ' + (vol.loadedFileCount + 1) + ' of ' + vol.urls.length + ' (' + progPerc + '%)';
+            progressText = papaya.volume.Volume.PROGRESS_LABEL_LOADING;
             vol.progressMeter.drawProgress(loaded / total, progressText);
         });
 
