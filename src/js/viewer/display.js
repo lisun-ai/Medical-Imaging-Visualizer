@@ -68,7 +68,7 @@ papaya.viewer.Display.FONT_SIZE_MESSAGE_VALUE = 20;
 papaya.viewer.Display.FONT_TYPE_MESSAGE_VALUE = "sans-serif";
 papaya.viewer.Display.FONT_COLOR_MESSAGE = "rgb(200, 75, 25)";
 
-papaya.viewer.Display.PROGRESS_LABEL_SUFFIX = ["...", "", ".", ".."];
+papaya.viewer.Display.PROGRESS_LABEL_SUFFIX = ["..."];
 papaya.viewer.Display.PROGRESS_LABEL_DEFAULT = "Loading";
 
 
@@ -400,7 +400,7 @@ papaya.viewer.Display.prototype.drawProgress = function (progress, label) {
             now = new Date().getTime();
         }
 
-        progressIndex = parseInt((now - this.progressStartTime) / 500, 10) % 4;
+        // progressIndex = parseInt((now - this.progressStartTime) / 500, 10) % 4;
 
         if (this.progress >= 990) {
             if (this.progressTimeout) {
@@ -434,10 +434,10 @@ papaya.viewer.Display.prototype.drawProgress = function (progress, label) {
             this.context.font = papaya.viewer.Display.FONT_SIZE_MESSAGE_VALUE + "px " +
                 papaya.viewer.Display.FONT_TYPE_MESSAGE_VALUE;
             this.context.fillStyle = papaya.viewer.Display.FONT_COLOR_MESSAGE;
-            yLoc = papaya.viewer.Display.FONT_SIZE_COORDINATE_LABEL + papaya.viewer.Display.PADDING + 1.5 *
+            yLoc = papaya.viewer.Display.FONT_SIZE_COORDINATE_LABEL + papaya.viewer.Display.PADDING + 1.2 *
                 papaya.viewer.Display.PADDING;
-            this.context.fillText(progressLabel + papaya.viewer.Display.PROGRESS_LABEL_SUFFIX[progressIndex],
-                papaya.viewer.Display.PADDING * 2, yLoc);
+            this.context.fillText(progressLabel + papaya.viewer.Display.PROGRESS_LABEL_SUFFIX,
+                papaya.viewer.Display.PADDING, yLoc);
         }
     }
 };
