@@ -132,11 +132,12 @@ papaya.ui.Menu.prototype.buildMenuButton = function () {
             html += ("' src='" + this.icons[0] + "' /></span>");
         }
     } else if (this.isTitleBar) {
-        html = "<div class='" + PAPAYA_MENU_UNSELECTABLE + " " + PAPAYA_MENU_TITLEBAR_CSS + " " + PAPAYA_TITLEBAR_CSS +
-            "' style='z-index:-1;position:absolute;top:" +
-            (0) + "px;width:" +
-            this.htmlParent.width() + "px;text-align:center;color:" + papaya.ui.Menu.getNiceForegroundColor(this.viewer.bgColor) + "'>" +
-            this.label + "</div>";
+        html = "";
+        // html = "<div class='" + PAPAYA_MENU_UNSELECTABLE + " " + PAPAYA_MENU_TITLEBAR_CSS + " " + PAPAYA_TITLEBAR_CSS +
+        //     "' style='z-index:-1;position:absolute;top:" +
+        //     (0) + "px;width:" +
+        //     this.htmlParent.width() + "px;text-align:center;color:" + papaya.ui.Menu.getNiceForegroundColor(this.viewer.bgColor) + "'>" +
+        //     this.label + "</div>";
     } else {
         html = "<span id='" + this.buttonId + "' class='" + PAPAYA_MENU_UNSELECTABLE + " " +
             PAPAYA_MENU_LABEL_CSS + "'>" + this.label + "</span>";
@@ -185,9 +186,10 @@ papaya.ui.Menu.prototype.buildMenuButton = function () {
             buttonImgHtml.mouseup(function () {
                 $(this).css({ 'border': '2px outset lightgray' });
             });
-        } else if (!this.isTitleBar) {
-            buttonHtml.hover(function () {$(this).toggleClass(PAPAYA_MENU_BUTTON_HOVERING_CSS); });
         }
+        // else if (!this.isTitleBar) {
+        //     buttonHtml.hover(function () {$(this).toggleClass(PAPAYA_MENU_BUTTON_HOVERING_CSS); });
+        // }
     }
 
     return this.buttonId;

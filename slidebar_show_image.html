@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>slide bar</title>
+        <style>
+            #image-container {
+                text-align: center;
+            }
+
+            #image-display {
+                height: 200px; /* Set the desired height */
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Please write a description about the CT Scan:</h1>
+        <script>
+            function updateImage() {
+                // Get the current value of the slider
+                var sliderValue = document.getElementById("image-slider").value;
+
+                // Create the image filename based on the slider value (assuming a 4-digit sequence)
+                var imageName = "https://raw.githubusercontent.com/SuperBruceJia/paper-reading/master/Neuroscience-AI/ct-scan/axial" + padNumber(sliderValue, 4) + ".png";
+
+                // Update the image source
+                document.getElementById("image-display").src = imageName;
+            }
+
+            function padNumber(number, length) {
+                // Function to pad a number with leading zeros to a specified length
+                return String(number).padStart(length, '0');
+            }
+        </script>
+
+        <div id="image-container">
+            <img id="image-display" src="https://raw.githubusercontent.com/SuperBruceJia/paper-reading/master/Neuroscience-AI/ct-scan/axial0001.png" alt="Image">
+            <br>
+            <label for="image-slider">Slide Bar:</label>
+            <input type="range" id="image-slider" min="1" max="10" value="1" oninput="updateImage()">
+        </div>
+
+    </body>
+</html>

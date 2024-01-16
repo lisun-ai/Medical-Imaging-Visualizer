@@ -267,7 +267,7 @@ papaya.viewer.Viewer.prototype.showDialog = function (title, data, datasource, c
     }
 
     var dialog = new papaya.ui.Dialog(this.container, title, data, datasource, callback, callbackOk, index);
-    dialog.showDialog();
+    // dialog.showDialog();
 };
 
 
@@ -686,7 +686,7 @@ papaya.viewer.Viewer.prototype.initializeViewer = function () {
 
         this.container.toolbar.buildToolbar();
         this.container.toolbar.updateImageButtons();
-        this.updateWindowTitle();
+        // this.updateWindowTitle();
 
         this.container.loadingImageIndex = 1;
         if (this.container.hasMoreToLoad()) {
@@ -713,7 +713,7 @@ papaya.viewer.Viewer.prototype.finishedLoading = function () {
 
     this.container.toolbar.buildToolbar();
     this.container.toolbar.updateImageButtons();
-    this.updateWindowTitle();
+    // this.updateWindowTitle();
 };
 
 
@@ -822,7 +822,7 @@ papaya.viewer.Viewer.prototype.initializeOverlay = function () {
 
         this.container.resizeViewerComponents();
 
-        this.updateWindowTitle();
+        // this.updateWindowTitle();
         this.loadingVolume = null;
 
         if (screenParams && screenParams.loadingComplete) {
@@ -859,7 +859,7 @@ papaya.viewer.Viewer.prototype.closeOverlay = function (index) {
     this.drawViewer(true);
     this.container.toolbar.buildToolbar();
     this.container.toolbar.updateImageButtons();
-    this.updateWindowTitle();
+    // this.updateWindowTitle();
 
     this.hasSeries = false;
     for (ctr = 0; ctr < this.screenVolumes.length; ctr += 1) {
@@ -1871,7 +1871,7 @@ papaya.viewer.Viewer.prototype.viewsChanged = function () {
 papaya.viewer.Viewer.prototype.timepointChanged = function () {
     this.drawViewer(true);
     this.updateSliceSliderControl();
-    this.updateWindowTitle();
+    // this.updateWindowTitle();
 };
 
 
@@ -2057,7 +2057,7 @@ papaya.viewer.Viewer.prototype.mouseUpEvent = function (me) {
     this.grabbedHandle = null;
     this.isContextMode = false;
 
-    this.updateWindowTitle();
+    // this.updateWindowTitle();
     this.updateSliceSliderControl();
     this.container.toolbar.closeAllMenus(true);
 
@@ -2718,32 +2718,32 @@ papaya.viewer.Viewer.prototype.getImageDescription = function (index) {
 
 papaya.viewer.Viewer.prototype.setCurrentScreenVol = function (index) {
     this.currentScreenVolume = this.screenVolumes[index];
-    this.updateWindowTitle();
+    // this.updateWindowTitle();
 };
 
 
 
-papaya.viewer.Viewer.prototype.updateWindowTitle = function () {
-    var title;
-
-    if (this.initialized) {
-        title = this.getNiceFilename(this.getCurrentScreenVolIndex());
-
-        if (this.currentScreenVolume.volume.numTimepoints > 1) {
-            if (this.currentScreenVolume.seriesLabels && (this.currentScreenVolume.seriesLabels.length > this.currentScreenVolume.currentTimepoint)) {
-                title = this.currentScreenVolume.seriesLabels[this.currentScreenVolume.currentTimepoint];
-            } else {
-                title = (title + " (" + (this.currentScreenVolume.currentTimepoint + 1) + " of " + this.currentScreenVolume.volume.numTimepoints + ")");
-            }
-        }
-
-        if (this.isZooming()) {
-            title = (title + " " + this.getZoomString());
-        }
-
-        this.container.toolbar.updateTitleBar(title);
-    }
-};
+// papaya.viewer.Viewer.prototype.updateWindowTitle = function () {
+//
+//     var title;
+//
+//     // if (this.initialized) {
+//     //     title = this.getNiceFilename(this.getCurrentScreenVolIndex());
+//     //
+//     //     if (this.currentScreenVolume.volume.numTimepoints > 1) {
+//     //         if (this.currentScreenVolume.seriesLabels && (this.currentScreenVolume.seriesLabels.length > this.currentScreenVolume.currentTimepoint)) {
+//     //             title = this.currentScreenVolume.seriesLabels[this.currentScreenVolume.currentTimepoint];
+//     //         } else {
+//     //             title = (title + " (" + (this.currentScreenVolume.currentTimepoint + 1) + " of " + this.currentScreenVolume.volume.numTimepoints + ")");
+//     //         }
+//     //     }
+//     //
+//     //     if (this.isZooming()) {
+//     //         title = (title + " " + this.getZoomString());
+//     //     }
+//         // this.container.toolbar.updateTitleBar(title);
+//     }
+// };
 
 
 
@@ -3056,7 +3056,7 @@ papaya.viewer.Viewer.prototype.setZoomFactor = function (val) {
         this.panAmountZ, this);
     this.drawViewer(false, true);
 
-    this.updateWindowTitle();
+    // this.updateWindowTitle();
 };
 
 

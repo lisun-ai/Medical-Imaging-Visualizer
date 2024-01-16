@@ -911,6 +911,7 @@ papaya.Container.prototype.resizeViewerComponents = function (resize) {
     }
 
     if (this.isDesktopMode()) {
+        // this.titlebarHtml.css({visibility: "hidden"})
         if (dims[0] < 600) {
             this.titlebarHtml.css({visibility: "hidden"});
         } else {
