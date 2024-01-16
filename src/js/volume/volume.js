@@ -36,7 +36,7 @@ papaya.volume.Volume = papaya.volume.Volume || function (progressMeter, dialogHa
 
 /*** Static Pseudo-constants ***/
 
-papaya.volume.Volume.PROGRESS_LABEL_LOADING = "Loading the image";
+papaya.volume.Volume.PROGRESS_LABEL_LOADING = "Loading the image ";
 
 
 /*** Prototype Methods ***/
