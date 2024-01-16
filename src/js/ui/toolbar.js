@@ -985,6 +985,5 @@ papaya.ui.Toolbar.prototype.showImageMenu = function (index) {
 
 
 papaya.ui.Toolbar.prototype.updateImageMenuRange = function (index, min, max) {
-    // this.imageMenus[index].updateRangeItem(min, max);
-    this.imageMenus[index].updateRangeItem(-1024, -200);
+    this.imageMenus[index].updateRangeItem(min, max);
 };
