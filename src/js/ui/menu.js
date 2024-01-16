@@ -139,9 +139,9 @@ papaya.ui.Menu.prototype.buildMenuButton = function () {
         //     this.htmlParent.width() + "px;text-align:center;color:" + papaya.ui.Menu.getNiceForegroundColor(this.viewer.bgColor) + "'>" +
         //     this.label + "</div>";
     } else {
-        html = null;
-        // html = "<span id='" + this.buttonId + "' class='" + PAPAYA_MENU_UNSELECTABLE + " " +
-        //     PAPAYA_MENU_LABEL_CSS + "'>" + this.label + "</span>";
+        // html = null;
+        html = "<span id='" + this.buttonId + "' class='" + PAPAYA_MENU_UNSELECTABLE + " " +
+            PAPAYA_MENU_LABEL_CSS + "'>" + this.label + "</span>";
     }
 
     this.htmlParent.append(html);
