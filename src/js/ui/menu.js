@@ -132,15 +132,16 @@ papaya.ui.Menu.prototype.buildMenuButton = function () {
             html += ("' src='" + this.icons[0] + "' /></span>");
         }
     } else if (this.isTitleBar) {
-        html = "";
+        html = null;
         // html = "<div class='" + PAPAYA_MENU_UNSELECTABLE + " " + PAPAYA_MENU_TITLEBAR_CSS + " " + PAPAYA_TITLEBAR_CSS +
         //     "' style='z-index:-1;position:absolute;top:" +
         //     (0) + "px;width:" +
         //     this.htmlParent.width() + "px;text-align:center;color:" + papaya.ui.Menu.getNiceForegroundColor(this.viewer.bgColor) + "'>" +
         //     this.label + "</div>";
     } else {
-        html = "<span id='" + this.buttonId + "' class='" + PAPAYA_MENU_UNSELECTABLE + " " +
-            PAPAYA_MENU_LABEL_CSS + "'>" + this.label + "</span>";
+        html = null;
+        // html = "<span id='" + this.buttonId + "' class='" + PAPAYA_MENU_UNSELECTABLE + " " +
+        //     PAPAYA_MENU_LABEL_CSS + "'>" + this.label + "</span>";
     }
 
     this.htmlParent.append(html);
