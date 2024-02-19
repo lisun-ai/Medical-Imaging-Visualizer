@@ -12,11 +12,13 @@
 
     <script type="text/javascript">
         var params = [];
+        params["showOrientation"] = true;
+        params["radiological"] = true;
         file_name = "19676E_INSP_STD_JHU_COPD_BSpline_Iso1.0mm.nii";
         path = "https://huggingface.co/datasets/shuyuej/testing_ct_scan_images/resolve/main/" +
             file_name + "?download=true";
         params["images"] = [path];
-        params[file_name] = {"showOrientation": true, "radiological": true};
+        // params[file_name] = {"showOrientation": true, "radiological": true};
         // params["showOrientation"] = true;
         // params["radiological"] = true;
         // params[file_name] = {"min": -1024, "max": -200};
