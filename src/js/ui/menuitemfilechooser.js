@@ -28,7 +28,6 @@ papaya.ui.MenuItemFileChooser = papaya.ui.MenuItemFileChooser || function (viewe
 
 
 /*** Prototype Methods ***/
-
 papaya.ui.MenuItemFileChooser.prototype.buildHTML = function (parentId) {
     var filechooser, html;
 

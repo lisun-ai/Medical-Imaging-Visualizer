@@ -332,28 +332,28 @@ papaya.ui.Toolbar.prototype.buildToolbar = function () {
     this.container.toolbarHtml.find("." + PAPAYA_MENU_LABEL_CSS).remove();
     this.container.toolbarHtml.find("." + PAPAYA_TITLEBAR_CSS).remove();
 
-    if (this.container.kioskMode) {
-        for (ctr = 0; ctr < papaya.ui.Toolbar.MENU_DATA_KIOSK.menus.length; ctr += 1) {
-            this.buildMenu(papaya.ui.Toolbar.MENU_DATA_KIOSK.menus[ctr], null, this.viewer, null);
-        }
-    } else {
-        if ((this.container.viewer.screenVolumes.length > 0) && this.container.viewer.screenVolumes[0].rgb) {
-            papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.RGB_FILE_MENU_DATA;
-        } else {
-            if (this.container.noNewFiles) {
-                papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.RGB_FILE_MENU_DATA;
-            } else {
-                papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.FILE_MENU_DATA;
-            }
-            this.buildOpenMenuItems(papaya.ui.Toolbar.MENU_DATA);
-        }
-
-        for (ctr = 0; ctr < papaya.ui.Toolbar.MENU_DATA.menus.length; ctr += 1) {
-            this.buildMenu(papaya.ui.Toolbar.MENU_DATA.menus[ctr], null, this.viewer, null);
-        }
-
-        this.buildAtlasMenu();
-    }
+    // if (this.container.kioskMode) {
+    //     for (ctr = 0; ctr < papaya.ui.Toolbar.MENU_DATA_KIOSK.menus.length; ctr += 1) {
+    //         this.buildMenu(papaya.ui.Toolbar.MENU_DATA_KIOSK.menus[ctr], null, this.viewer, null);
+    //     }
+    // } else {
+    //     if ((this.container.viewer.screenVolumes.length > 0) && this.container.viewer.screenVolumes[0].rgb) {
+    //         papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.RGB_FILE_MENU_DATA;
+    //     } else {
+    //         if (this.container.noNewFiles) {
+    //             papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.RGB_FILE_MENU_DATA;
+    //         } else {
+    //             papaya.ui.Toolbar.MENU_DATA.menus[0] = papaya.ui.Toolbar.FILE_MENU_DATA;
+    //         }
+    //         this.buildOpenMenuItems(papaya.ui.Toolbar.MENU_DATA);
+    //     }
+    //
+    //     for (ctr = 0; ctr < papaya.ui.Toolbar.MENU_DATA.menus.length; ctr += 1) {
+    //         this.buildMenu(papaya.ui.Toolbar.MENU_DATA.menus[ctr], null, this.viewer, null);
+    //     }
+    //
+    //     this.buildAtlasMenu();
+    // }
 
     this.buildColorMenuItems();
 
