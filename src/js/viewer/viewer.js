@@ -601,38 +601,38 @@ papaya.viewer.Viewer.prototype.initializeViewer = function () {
                 viewer.gotoCoordinate(viewer.volume.header.origin);
             });
 
-            $("." + PAPAYA_CONTROL_INCREMENT_BUTTON_CSS).prop('disabled', false);
+            $("." + PAPAYA_CONTROL_INCREMENT_BUTTON_CSS).prop('disabled', true);
             $("." + PAPAYA_CONTROL_SWAP_BUTTON_CSS).prop('disabled', false);
             $("." + PAPAYA_CONTROL_GOTO_CENTER_BUTTON_CSS).prop('disabled', false);
             $("." + PAPAYA_CONTROL_GOTO_ORIGIN_BUTTON_CSS).prop('disabled', false);
         } else if (this.container.showControls) {
-            $("#" + PAPAYA_CONTROL_MAIN_INCREMENT_BUTTON_CSS + this.container.containerIndex).css({display: "inline"});
-            $("#" + PAPAYA_CONTROL_MAIN_DECREMENT_BUTTON_CSS + this.container.containerIndex).css({display: "inline"});
+            // $("#" + PAPAYA_CONTROL_MAIN_INCREMENT_BUTTON_CSS + this.container.containerIndex).css({display: "inline"});
+            // $("#" + PAPAYA_CONTROL_MAIN_DECREMENT_BUTTON_CSS + this.container.containerIndex).css({display: "inline"});
             $("#" + PAPAYA_CONTROL_MAIN_SWAP_BUTTON_CSS + this.container.containerIndex).css({display: "inline"});
 
             $(this.container.containerHtml.find("#" + PAPAYA_CONTROL_MAIN_SWAP_BUTTON_CSS + this.container.containerIndex)).click(function () {
                 viewer.rotateViews();
             });
 
-            $(this.container.containerHtml.find("#" + PAPAYA_CONTROL_MAIN_INCREMENT_BUTTON_CSS + this.container.containerIndex)).click(function () {
-                if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_AXIAL) {
-                    viewer.incrementAxial(false);
-                } else if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_CORONAL) {
-                    viewer.incrementCoronal(false);
-                } else if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_SAGITTAL) {
-                    viewer.incrementSagittal(true);
-                }
-            });
+            // $(this.container.containerHtml.find("#" + PAPAYA_CONTROL_MAIN_INCREMENT_BUTTON_CSS + this.container.containerIndex)).click(function () {
+            //     if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_AXIAL) {
+            //         viewer.incrementAxial(false);
+            //     } else if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_CORONAL) {
+            //         viewer.incrementCoronal(false);
+            //     } else if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_SAGITTAL) {
+            //         viewer.incrementSagittal(true);
+            //     }
+            // });
 
-            $(this.container.containerHtml.find("#" + PAPAYA_CONTROL_MAIN_DECREMENT_BUTTON_CSS + this.container.containerIndex)).click(function () {
-                if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_AXIAL) {
-                    viewer.incrementAxial(true);
-                } else if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_CORONAL) {
-                    viewer.incrementCoronal(true);
-                } else if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_SAGITTAL) {
-                    viewer.incrementSagittal(false);
-                }
-            });
+            // $(this.container.containerHtml.find("#" + PAPAYA_CONTROL_MAIN_DECREMENT_BUTTON_CSS + this.container.containerIndex)).click(function () {
+            //     if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_AXIAL) {
+            //         viewer.incrementAxial(true);
+            //     } else if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_CORONAL) {
+            //         viewer.incrementCoronal(true);
+            //     } else if (viewer.mainImage.sliceDirection === papaya.viewer.ScreenSlice.DIRECTION_SAGITTAL) {
+            //         viewer.incrementSagittal(false);
+            //     }
+            // });
 
             $(this.container.containerHtml.find("#" + PAPAYA_CONTROL_MAIN_GOTO_CENTER_BUTTON_CSS + this.container.containerIndex)).click(function () {
                 var center = new papaya.core.Coordinate(Math.floor(viewer.volume.header.imageDimensions.xDim / 2),
@@ -2081,8 +2081,8 @@ papaya.viewer.Viewer.prototype.mouseUpEvent = function (me) {
 
 
 papaya.viewer.Viewer.prototype.fadeOutControls = function () {
-    $("#" + PAPAYA_CONTROL_MAIN_INCREMENT_BUTTON_CSS + this.container.containerIndex).fadeOut();
-    $("#" + PAPAYA_CONTROL_MAIN_DECREMENT_BUTTON_CSS + this.container.containerIndex).fadeOut();
+    // $("#" + PAPAYA_CONTROL_MAIN_INCREMENT_BUTTON_CSS + this.container.containerIndex).fadeOut();
+    // $("#" + PAPAYA_CONTROL_MAIN_DECREMENT_BUTTON_CSS + this.container.containerIndex).fadeOut();
     $("#" + PAPAYA_CONTROL_MAIN_SWAP_BUTTON_CSS + this.container.containerIndex).fadeOut();
     $("#" + PAPAYA_CONTROL_MAIN_GOTO_CENTER_BUTTON_CSS + this.container.containerIndex).fadeOut();
     $("#" + PAPAYA_CONTROL_MAIN_GOTO_ORIGIN_BUTTON_CSS + this.container.containerIndex).fadeOut();
@@ -2092,17 +2092,17 @@ papaya.viewer.Viewer.prototype.fadeOutControls = function () {
 
 papaya.viewer.Viewer.prototype.fadeInControls = function () {
     if (this.container.getViewerDimensions()[0] < 600) {
-        if (this.mainImage !== this.surfaceView) {
-            $("#" + PAPAYA_CONTROL_MAIN_INCREMENT_BUTTON_CSS + this.container.containerIndex).fadeIn();
-            $("#" + PAPAYA_CONTROL_MAIN_DECREMENT_BUTTON_CSS + this.container.containerIndex).fadeIn();
-        }
+        // if (this.mainImage !== this.surfaceView) {
+        //     $("#" + PAPAYA_CONTROL_MAIN_INCREMENT_BUTTON_CSS + this.container.containerIndex).fadeIn();
+        //     $("#" + PAPAYA_CONTROL_MAIN_DECREMENT_BUTTON_CSS + this.container.containerIndex).fadeIn();
+        // }
 
         $("#" + PAPAYA_CONTROL_MAIN_SWAP_BUTTON_CSS + this.container.containerIndex).fadeIn();
     } else {
-        if (this.mainImage !== this.surfaceView) {
-            $("#" + PAPAYA_CONTROL_MAIN_INCREMENT_BUTTON_CSS + this.container.containerIndex).fadeIn();
-            $("#" + PAPAYA_CONTROL_MAIN_DECREMENT_BUTTON_CSS + this.container.containerIndex).fadeIn();
-        }
+        // if (this.mainImage !== this.surfaceView) {
+        //     $("#" + PAPAYA_CONTROL_MAIN_INCREMENT_BUTTON_CSS + this.container.containerIndex).fadeIn();
+        //     $("#" + PAPAYA_CONTROL_MAIN_DECREMENT_BUTTON_CSS + this.container.containerIndex).fadeIn();
+        // }
 
         $("#" + PAPAYA_CONTROL_MAIN_SWAP_BUTTON_CSS + this.container.containerIndex).fadeIn();
         $("#" + PAPAYA_CONTROL_MAIN_GOTO_CENTER_BUTTON_CSS + this.container.containerIndex).fadeIn();
