@@ -15,7 +15,10 @@
         file_name = 'extensive_consolidation.nii.gz';
         path = "user_study_data/ours/" + file_name;
         params["images"] = [path];
-        params[file_name] = {"min": -1024, "max": 600};
+        params["kioskMode"] = false;
+        params["showControls"] = true;
+        params["showControlBar"] = false;
+        params["noNewFiles"] = false;
     </script>
 
     <title>Online Medical Imaging Visualizer</title>
