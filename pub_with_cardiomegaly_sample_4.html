@@ -15,7 +15,11 @@
         file_name = 'with_cardiomegaly_sample_4.nii.gz';
         path = "user_study_data/ours/" + file_name;
         params["images"] = [path];
-        params[file_name] = {"min": -1024, "max": 600};
+        params["kioskMode"] = false;
+        params["showControls"] = true;
+        params["showControlBar"] = false;
+        params["noNewFiles"] = false;
+        // params[file_name] = {"min": -1024, "max": 600};
     </script>
 
     <title>Online Medical Imaging Visualizer</title>
